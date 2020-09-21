@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>noughts-and-crosses.png</file>
+    </qresource>
+</RCC>
