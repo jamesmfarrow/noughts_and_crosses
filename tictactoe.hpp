@@ -12,6 +12,7 @@
 #include <QGridLayout>
 #include <QMessageBox>
 #include <QApplication>
+#include <QProcess>
 
 
 class controller;
@@ -66,7 +67,7 @@ public:
     //constructor
     model(controller* c) : c(c), turn(0) { srand(time(0)); }
 
-    void reset() {
+    /*void reset() {
         for( int i = 0; i < 9;i++)
         {
             board[i/3][i%3] = ' ';
@@ -74,7 +75,7 @@ public:
         turn = 0;
         PlayerXwin = false;
         PlayerOwin = false;
-    }
+    }*/
 
     void setlevel(int input) { level = input; }
 
@@ -318,7 +319,10 @@ public:
 
 };
 
+//initialise static variable outside of the class
 int model::level = 1;
+
+
 
 // gui code, doesn't know anything about game logic
 class view : public QWidget {
@@ -382,9 +386,9 @@ public:
         v->show_end_dialog(w);
     }
 
-    void reset() {
+    /*void reset() {
         m->reset();
-    }
+    }*/
 
     void PlayingLevel(int num) {
         m->setlevel(num);
@@ -449,28 +453,29 @@ inline void view::show_end_dialog(char w) {
         s="it was a draw!";
     }
     QMessageBox b;
-    QPushButton* quit = new QPushButton("Quit");
-    QPushButton* play_again = new QPushButton("Play Again");
+    b.setIcon(QMessageBox::Question);
     b.setInformativeText(s);
-    b.setText("Game Over");
-    quit->setFixedSize(100,30);
-    b.addButton(quit, QMessageBox::AcceptRole);
-    b.addButton(play_again, QMessageBox::AcceptRole);
-    QObject::connect(play_again, &QPushButton::pressed, [=](){
-        c->reset();
-        for(int i=0; i<9; i++)
-            buttons[i]->setText("");
+    b.setText("Game Over\nPlay Again?");
+    QPushButton* Yes = new QPushButton("Yes");
+    QPushButton* No = new QPushButton("No");
+    b.addButton(Yes, QMessageBox::AcceptRole);
+    b.addButton(No, QMessageBox::AcceptRole);
+    Yes->setFixedSize(150,30);
+    No->setFixedSize(150,30);
+    QObject::connect(Yes, &QPushButton::pressed, [=](){
+        qApp->quit();
+        QProcess::startDetached(qApp->arguments()[0], qApp->arguments());
     });
-    QObject::connect(quit, &QPushButton::pressed, [=](){
-       QApplication::quit();
+    QObject::connect(No, &QPushButton::pressed, [=](){
+        QApplication::quit();
     });
 
     b.exec();
-
 }
 
 inline void view::init() {
     QMessageBox init;
+    init.setIcon(QMessageBox::Question);
     init.setInformativeText("Please click the level you want to play");
     init.setText("Welcome to Noughts and Crosses");
     QPushButton* easy = new QPushButton("Easy");
@@ -487,7 +492,7 @@ inline void view::init() {
     });
 
     init.exec();
-    std::cout << "response" << std::endl;
+    //std::cout << "response" << std::endl;
 }
 
 
