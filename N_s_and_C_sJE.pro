@@ -33,3 +33,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 #RESOURCES += \
  #   icon.qrc
+
+RESOURCES += \
+    icons.qrc
