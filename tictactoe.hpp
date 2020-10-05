@@ -13,6 +13,8 @@
 #include <QMessageBox>
 #include <QApplication>
 #include <QProcess>
+#include <QPixmap>
+#include <QIcon>
 
 
 class controller;
@@ -348,7 +350,19 @@ public:
     void setup();
 
     void update(int row, int col, QString val) {
-        buttons[row*3+col]->setText(val);
+        //buttons[row*3+col]->setText(val);
+        //this where button need to be updated to diplay .png Cross or nought
+        if(val == 'X') {
+            QPixmap pixmap(":/new/prefix1/420-4201654_png-file-svg-tic-tac-toe-cross-clipart.png.jpeg");
+            QIcon ButtonIcon(pixmap);
+            buttons[row*3+col]->setIcon(ButtonIcon);
+            }
+         else {
+            QPixmap pixmap(":/new/prefix1/circle.png");
+            QIcon ButtonIcon(pixmap);
+            buttons[row*3+col]->setIcon(ButtonIcon);
+            }
+        //buttons[row*3+col]->setText(val);
     }
 
     //funtion shows who won, play again, or quit
