@@ -356,11 +356,13 @@ public:
             QPixmap pixmap(":/new/prefix1/420-4201654_png-file-svg-tic-tac-toe-cross-clipart.png.jpeg");
             QIcon ButtonIcon(pixmap);
             buttons[row*3+col]->setIcon(ButtonIcon);
+            buttons[row*3+col]->setIconSize(QSize(150,150));
             }
          else {
             QPixmap pixmap(":/new/prefix1/circle.png");
             QIcon ButtonIcon(pixmap);
             buttons[row*3+col]->setIcon(ButtonIcon);
+            buttons[row*3+col]->setIconSize(QSize(150,150));
             }
         //buttons[row*3+col]->setText(val);
     }
