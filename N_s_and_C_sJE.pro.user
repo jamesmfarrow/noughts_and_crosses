@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<<<<<<< HEAD
-<!-- Written by QtCreator 4.12.2, 2020-10-07T18:44:30. -->
-=======
-<!-- Written by QtCreator 4.12.2, 2020-10-07T18:38:03. -->
->>>>>>> be688cd35ba6fd1641d19465a4d422765e193a34
+<!-- Written by QtCreator 4.12.2, 2020-10-10T16:19:37. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -79,7 +75,7 @@
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Desktop (x86-darwin-generic-mach_o-64bit)</value>
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Desktop (x86-darwin-generic-mach_o-64bit)</value>
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">{292cf5d6-c112-4646-8a89-2b0ffcd001bd}</value>
-   <value type="int" key="ProjectExplorer.Target.ActiveBuildConfiguration">1</value>
+   <value type="int" key="ProjectExplorer.Target.ActiveBuildConfiguration">2</value>
    <value type="int" key="ProjectExplorer.Target.ActiveDeployConfiguration">0</value>
    <value type="int" key="ProjectExplorer.Target.ActiveRunConfiguration">0</value>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.0">
@@ -324,7 +320,7 @@
     <value type="bool" key="RunConfiguration.UseQmlDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
     <value type="QString" key="RunConfiguration.WorkingDirectory"></value>
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/Users/james/Downloads/QT projects/build-N_s_and_C_sJE-Desktop_x86_darwin_generic_mach_o_64bit-Release/N_s_and_C_sJE.app/Contents/MacOS</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/Users/james/Downloads/QT projects/build-N_s_and_C_sJE-Desktop_x86_darwin_generic_mach_o_64bit-Profile/N_s_and_C_sJE.app/Contents/MacOS</value>
    </valuemap>
    <value type="int" key="ProjectExplorer.Target.RunConfigurationCount">1</value>
   </valuemap>

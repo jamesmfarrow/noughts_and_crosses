@@ -15,6 +15,10 @@
 #include <QProcess>
 #include <QPixmap>
 #include <QIcon>
+#include <QtMultimedia>
+#include <QtMultimediaWidgets>
+#include <QSound>
+
 
 
 class controller;
@@ -68,16 +72,6 @@ public:
 
     //constructor
     model(controller* c) : c(c), turn(0) { srand(time(0)); }
-
-    /*void reset() {
-        for( int i = 0; i < 9;i++)
-        {
-            board[i/3][i%3] = ' ';
-        }
-        turn = 0;
-        PlayerXwin = false;
-        PlayerOwin = false;
-    }*/
 
     void setlevel(int input) { level = input; }
 
@@ -357,12 +351,14 @@ public:
             QIcon ButtonIcon(pixmap);
             buttons[row*3+col]->setIcon(ButtonIcon);
             buttons[row*3+col]->setIconSize(QSize(150,150));
+            QSound::play(":/button-7.wav");
             }
          else {
             QPixmap pixmap(":/new/prefix1/circle.png");
             QIcon ButtonIcon(pixmap);
             buttons[row*3+col]->setIcon(ButtonIcon);
             buttons[row*3+col]->setIconSize(QSize(150,150));
+            QSound::play(":/button-7.wav");
             }
         //buttons[row*3+col]->setText(val);
     }
@@ -463,9 +459,11 @@ inline void model::AI_move(){
 inline void view::show_end_dialog(char w) {
     QString s="";
     if(w) {
+        QSound::play(":/applause-8.wav");
         s+=w;
         s+=" won the game!";
     } else {
+        QSound::play(":/man-giggling-02.wav");
         s="it was a draw!";
     }
     QMessageBox b;

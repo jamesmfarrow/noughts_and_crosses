@@ -4,4 +4,9 @@
         <file>circle.png</file>
     </qresource>
     <qresource prefix="/new/prefix2"/>
+    <qresource prefix="/">
+        <file>button-7.wav</file>
+        <file>applause-8.wav</file>
+        <file>man-giggling-02.wav</file>
+    </qresource>
 </RCC>
