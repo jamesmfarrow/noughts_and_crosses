@@ -398,10 +398,6 @@ public:
         v->show_end_dialog(w);
     }
 
-    /*void reset() {
-        m->reset();
-    }*/
-
     void PlayingLevel(int num) {
         m->setlevel(num);
     }

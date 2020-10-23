@@ -40,3 +40,5 @@ RESOURCES += \
 
 DISTFILES += \
     button-7.wav
+
+ICON = noughts and crosses.icns
